@@ -1,22 +1,18 @@
-import { test } from '@playwright/test';
-import { getTestUser } from '../utils/fileUtils';
+import { test } from './fixtures/patient.fixture';
 import { PatientsPage } from '../pages/PatientsPage';
 import { PatientProfilePage } from '../pages/PatientProfilePage';
 import { FinancialPage } from '../pages/FinancialPage';
 
-test('should create a payment for patient', async ({ page }) => {
+test('should create a payment for patient', async ({ page, patient }: { page: any; patient: any }) => {
 
-  const patient = getTestUser();
 
-  const patientsPage = new PatientsPage(page);
+  const patientsPage = new PatientsPage(page);''
   const profilePage = new PatientProfilePage(page);
   const financialPage = new FinancialPage(page);
 
-  await patientsPage.goto();
-
   await patientsPage.openPatient(patient.fullName);
 
-  await profilePage.goToFinancial();
+  await profilePage.goToFinancial(patient.fullName);
 
   await financialPage.createPayment('100');
 

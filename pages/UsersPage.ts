@@ -1,4 +1,5 @@
-import type { Page } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
+import { generatePatient } from '../utils/dataFactory';
 
 export class UsersPage {
 
@@ -14,21 +15,20 @@ export class UsersPage {
 
     await this.page.click('button:has-text("Create New Patient")');
 
-    const firstName = `Weslindo`;
-    const lastName = `Lins`;
-    const dateOfBirth = `01-16-2000`;
-    const email = `weslindoQa@test.com`;
-    // const phoneNumber = `1828317472`;
+    const patient = generatePatient();
 
-    await this.page.getByTestId('firstName').fill(firstName);
-    await this.page.getByTestId('lastName').fill(lastName);
-    await this.page.getByTestId('dateOfBirth').fill(dateOfBirth);
-    await this.page.getByTestId('email').fill(email);
-    // await this.page.getByTestId('phoneNumber').fill(phoneNumber);
+    await this.page.getByTestId('firstName').fill(patient.firstName);
+    await this.page.getByTestId('lastName').fill(patient.lastName);
+    await this.page.getByTestId('dateOfBirth').fill(patient.dateOfBirth);
+    await this.page.getByTestId('email').fill(patient.email);
     await this.page.getByTestId('createPatientConfirmBtn').click();
 
+    const toast = this.page.getByText('Patient was successfully created');
+
+    await expect(toast).toBeVisible({ timeout: 15000 });
+    
     return {
-      fullName: `${firstName} ${lastName}`,
+      fullName: `${patient.firstName} ${patient.lastName}`,
     };
   }
 

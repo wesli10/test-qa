@@ -1,4 +1,4 @@
-import type { Page } from '@playwright/test';
+import { expect, type Page } from '@playwright/test';
 
 export class FinancialPage {
 
@@ -8,7 +8,16 @@ export class FinancialPage {
 
     await this.page.click('button:has-text("Add Payment")');
 
-    await this.page.fill('#amount', amount);
+    const amountInput = this.page.getByTestId('value');
+
+    await expect(amountInput).toBeVisible();
+    await expect(amountInput).toBeEnabled();
+
+    await amountInput.fill(amount);
+
+    const paymentMethod = this.page.getByTestId('paymentMethod');
+    await expect(paymentMethod).toBeVisible();
+    await paymentMethod.click();
 
     await this.page.getByRole('option', { name: 'Cash' }).click();
 

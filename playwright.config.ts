@@ -1,4 +1,9 @@
 import { defineConfig } from '@playwright/test';
+import fs from 'fs';
+
+const storageState = fs.existsSync('.auth/storageState.json')
+  ? '.auth/storageState.json'
+  : undefined;
 
 export default defineConfig({
 
@@ -12,7 +17,7 @@ export default defineConfig({
 
   use: {
     baseURL: 'https://doctors.qa.patientstudio.com',
-    storageState: '.auth/storageState.json',
+    storageState,
     headless: false
   }
 

@@ -2,8 +2,18 @@ import { chromium } from 'playwright-core';
 import fs from 'fs';
 import { LoginPage } from '../pages/LoginPage';
 import { UsersPage } from '../pages/UsersPage';
+import { expect } from '@playwright/test';
 
 export default async function globalSetup() {
+  fs.mkdirSync('.auth', { recursive: true });
+
+  if (
+    fs.existsSync('.auth/storageState.json') &&
+    fs.existsSync('.auth/patient.json')
+  ) {
+    return;
+  }
+
   const browser = await chromium.launch();
 
   const context = await browser.newContext({
@@ -11,6 +21,10 @@ export default async function globalSetup() {
   });
 
   const page = await context.newPage();
+
+  if (fs.existsSync('.auth/patient.json')) {
+    fs.unlinkSync('.auth/patient.json');
+  }
 
   const loginPage = new LoginPage(page);
   const usersPage = new UsersPage(page);
@@ -26,12 +40,17 @@ export default async function globalSetup() {
     path: '.auth/storageState.json'
   });
 
-  const user = await usersPage.createUser();
+  const patient = await usersPage.createUser();
+  
+  await expect(
+    page.getByText('Patient was successfully created')
+  ).toBeVisible();
+  
+  fs.mkdirSync('.auth', { recursive: true });
 
   fs.writeFileSync(
-    'utils/test-user.json',
-    JSON.stringify(user)
+    '.auth/patient.json',
+    JSON.stringify(patient, null, 2)
   );
 
-  await browser.close();
-}
+  await browser.close();}

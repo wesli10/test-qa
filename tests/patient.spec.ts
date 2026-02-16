@@ -1,18 +1,21 @@
-import { test, expect } from '@playwright/test';
-import { getTestUser } from '../utils/fileUtils';
+import { test, expect } from './fixtures/patient.fixture';
 import { UsersPage } from '../pages/UsersPage';
+import { PatientsPage } from '../pages/PatientsPage';
+import { Page } from '@playwright/test';
 
 
-test('should verify that the user has been created.', async ({ page }) => {
+test('should verify that the user has been created.', async ({ page  }: { page: Page}) => {
 
-    const user = getTestUser();
 
+    const patientsPage = new PatientsPage(page);
     const usersPage = new UsersPage(page);
 
-    await usersPage.goto();
+    const patient = await usersPage.createUser();
+
+    await patientsPage.openPatient(patient.fullName);
 
     await expect(
-        page.getByText(user.fullName)
+        page.getByText(patient.fullName)
     ).toBeVisible();
 
 });
