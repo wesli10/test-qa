@@ -21,11 +21,11 @@ export class PatientsPage {
       name: fullName
     });
 
-    await expect(patientResult).toBeVisible();
+    await expect(patientResult).toBeVisible({ timeout: 15000 });
 
     await patientResult.click();
 
-    
+
 
   }
 

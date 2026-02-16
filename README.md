@@ -51,6 +51,39 @@ teste-patientStudio/
 
 ---
 
+## ⚙️ Configuração de Ambiente
+
+O projeto utiliza **variáveis de ambiente** para armazenar credenciais de forma segura. Isso evita expor dados sensíveis no código.
+
+### Variáveis de Ambiente Necessárias
+
+| Variável | Descrição | Exemplo |
+|----------|-----------|---------|
+| `QA_URL` | Email de autenticação | `office-admin@patientstudio.com` |
+| `QA_PASSWORD` | Senha de autenticação | `1 Super Safe Password!` |
+
+### Configurar o Arquivo `.env`
+
+1. **Copiar o template:**
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Editar com suas credenciais:**
+   ```env
+   QA_URL = 'seu-email@patientstudio.com'
+   QA_PASSWORD = 'sua-senha-aqui'
+   ```
+
+3. **Verificar no `.gitignore`:**
+   ```
+   # .gitignore
+   .env       # Nunca commitar!
+   .env.local
+   ```
+
+---
+
 ## 🚀 Como Executar
 
 ### 📦 Pré-requisitos
@@ -72,11 +105,17 @@ npm install
 
 ### 2️⃣ Configurar Credenciais
 
-O projeto utiliza uma conta de teste pré-configurada no `globalSetup.ts`:
-- **Email:** `office-admin@patientstudio.com`
-- **Senha:** `1 Super Safe Password!`
+Copie o arquivo `.env.example` para `.env` e atualize com suas credenciais:
 
-> ⚠️ Para um ambiente diferente, atualize as credenciais no arquivo `global/globalSetup.ts`
+```bash
+cp .env.example .env
+```
+
+Edite o arquivo `.env`:
+```env
+QA_URL = 'seu-email@patientstudio.com'
+QA_PASSWORD = 'sua-senha-aqui'
+```
 
 ### 3️⃣ Executar os Testes
 
@@ -385,9 +424,10 @@ npm test  # Vai gerar um novo setup
 |----------|---------|
 | "Element not found" | Aumentar timeout: `await page.waitForSelector(seletor, { timeout: 10000 })` |
 | Testes lentos | Reduzir workers em `playwright.config.ts` |
-| Erro de autenticação | Verificar credenciais em `globalSetup.ts` |
+| Erro de autenticação | Verificar credenciais em `.env` ou variáveis de ambiente |
 | Arquivo `.auth` corrompido | Deletar pasta `.auth` e executar novamente |
 | Timeout no setup | Aumentar timeout de login em `globalSetup.ts` |
+| "Process.env.QA_URL is undefined" | Verifique se o arquivo `.env` existe e foi configurado corretamente |
 
 ---
 

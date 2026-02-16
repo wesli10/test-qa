@@ -3,6 +3,9 @@ import fs from 'fs';
 import { LoginPage } from '../pages/LoginPage';
 import { UsersPage } from '../pages/UsersPage';
 import { expect } from '@playwright/test';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default async function globalSetup() {
   fs.mkdirSync('.auth', { recursive: true });
@@ -31,10 +34,10 @@ export default async function globalSetup() {
 
   await loginPage.goto();
 
-  await loginPage.login(
-    'office-admin@patientstudio.com',
-    '1 Super Safe Password!'
-  );
+  const email = process.env.QA_URL || 'office-admin@patientstudio.com';
+  const password = process.env.QA_PASSWORD || '1 Super Safe Password!';
+
+  await loginPage.login(email, password);
 
   await context.storageState({
     path: '.auth/storageState.json'
