@@ -59,8 +59,8 @@ O projeto utiliza **variáveis de ambiente** para armazenar credenciais de forma
 
 | Variável | Descrição | Exemplo |
 |----------|-----------|---------|
-| `QA_URL` | Email de autenticação | `office-admin@patientstudio.com` |
-| `QA_PASSWORD` | Senha de autenticação | `1 Super Safe Password!` |
+| `QA_URL` | Email de autenticação | `testemail@test.com` |
+| `QA_PASSWORD` | Senha de autenticação | `password` |
 
 ### Configurar o Arquivo `.env`
 
