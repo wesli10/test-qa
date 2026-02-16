@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import type { Page } from '@playwright/test';
 
 export class LoginPage {
 
@@ -10,13 +10,13 @@ export class LoginPage {
 
   async login(email: string, password: string) {
 
-    await this.page.fill('#email', email);
+    await this.page.locator('input[name="username"]').fill(email);
 
-    await this.page.fill('#password', password);
+    await this.page.locator('input[name="password"]').fill(password);
 
     await this.page.click('button[type="submit"]');
 
-    await this.page.waitForURL('/dashboard');
+    await this.page.waitForURL('/dashboard?tab=pendingNotes');
   }
 
 }

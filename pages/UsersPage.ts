@@ -1,38 +1,51 @@
-import { Page } from '@playwright/test';
+import type { Page } from '@playwright/test';
 
 export class UsersPage {
 
   constructor(private page: Page) {}
 
   async goto() {
-    await this.page.goto('/users');
+    await this.page.goto('/patients');
   }
 
   async createUser() {
 
     await this.goto();
 
-    await this.page.click('button:has-text("Criar usuário")');
+    await this.page.click('button:has-text("Create New Patient")');
 
-    const name = `User ${Date.now()}`;
-    const email = `user${Date.now()}@test.com`;
+    const firstName = `Weslindo`;
+    const lastName = `Lins`;
+    const dateOfBirth = `01-16-2000`;
+    const email = `weslindoQa@test.com`;
+    // const phoneNumber = `1828317472`;
 
-    await this.page.fill('#name', name);
+    await this.page.getByTestId('firstName').fill(firstName);
+    await this.page.getByTestId('lastName').fill(lastName);
+    await this.page.getByTestId('dateOfBirth').fill(dateOfBirth);
+    await this.page.getByTestId('email').fill(email);
+    // await this.page.getByTestId('phoneNumber').fill(phoneNumber);
+    await this.page.getByTestId('createPatientConfirmBtn').click();
 
-    await this.page.fill('#email', email);
-
-    await this.page.click('button:has-text("Salvar")');
-
-    await this.page.waitForSelector(`text=${email}`);
-
-    return { name, email };
+    return {
+      fullName: `${firstName} ${lastName}`,
+    };
   }
 
-  async openUser(email: string) {
+  async openUser(fullName: string) {
 
     await this.goto();
 
-    await this.page.click(`text=${email}`);
+    const searchInput = this.page.getByTestId('searchValue');
+
+    await searchInput.fill(fullName);
+    await searchInput.press('Enter');
+
+    const userResult = this.page.locator(`text=${fullName}`);
+
+    await userResult.waitFor({ state: 'visible' });
+
+
   }
 
 }

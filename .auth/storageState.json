@@ -1,0 +1,38 @@
+{
+  "cookies": [],
+  "origins": [
+    {
+      "origin": "https://doctors.qa.patientstudio.com",
+      "localStorage": [
+        {
+          "name": "last_path",
+          "value": "/"
+        },
+        {
+          "name": "refresh-token",
+          "value": "\"eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.dN7tiLpervcNLlOjro1hKgmiy4z5mb2Rzo5iXrpGJa3qL5yrmL8vfS5iDdnLig0CjASXu9A__pqezh53A_KsyX-K6oaRCRIUoGYAlJP56WpimNDVGDTUwx4SskUwynWkli8KZz8xxkJ866lX37waFy274F0h9GwQsyzJpMJlY0n9kgzlgcBcCaTNbmbeOgmtbND3383er2p5V70pyUW9KdDkrZ8IH3PmRrenpOHmTd9rKSNua3QRmoXBW5N9S9j5Gu69KbSyHEARAdJsiawbu69qUlFeOU8r3wWdO1X14NYANbOVyYgYui-RqZrwtrDTt2ykNyj5PFC7tAoxG9aMMQ.GYjvdA6vsgHnk5k8.Ux8K4f4kdA1gY5pM2JeO6mASOEzfIwAESTgPvpNq1fnwgw8qkM6uOnTHVoOC3mnMXL-ezwubn3osoVPgRLIqVuOjnc-5_3mC3WWs69DtG79w4WBk4NET1pFk6qy-lRjXRxvQV50KIUOipDIsTLo83sF3hb1Krm_VX3C5N4VzN0DIOTJdLkz172cLnDYicH7c-Z_YEGCZR1FyNyDh6aDq4NVrN0FmvCAHfSCxMP8matCkRXUElhdqNDS-SNdyXNoI52G_xNfGMGHd3G7Aick-5l0cHGEdsmgUHL-rWKIiyK8JRapRV-GueWo_3j4VtC-53951kRfai6nv6Aood6tMBGwn7nw1HGrBJklfMHiM5MHOWrmVoc_sn2mHJK0hOBLg1IzaCEtNUIZxd46a2UETwCaxX7-xLRtGwfRSt10a-1-U6Lp_LoL8rW8_Po0OfhwtX_Svn2E9DLEi_Q6Sxu0VeaHnGBnqlzdz80pW7d5fZCST4S0L0f5z0O529C3Hm9H_7LJG_3xB_4zEwDt0g4b9ui1Sy5qzk0aKA4MbvG_sbOwbIaG1N0QrzwuYGp_1CBU3FTZUxWXTg1yHybIY7ZcWc-Bv26G4OD7Vj0eqZofOCIYthFTF9XKsNPZrve--7sTdG7WAsEsgwq1nrWvpiFnjkW86X88ZDTjqOXnkKBcWKM-238mK5hVg9N_YL0gQ-dkC0SK6s2aFnKgvsSZ70KW9aqFTC21Z5ZjcRWsP8ygfnx0uWAQVCN1_N3vNGlEdjZeDGjlMbkZb0o2Ogs8cx695FTahcW7RMwlamkOF8yCTPB8M0X1z-scDu6IHZE8X4Y_ma0geF0kBnnU14o9arX0UO8zJJs_zy7wLN7F36jhkm9JJXlDnsQoNu9_QE4dtgxNl-tkmKvonnktJoOzri0iwMahkMiMfs--v_rVCNe2dQ8bGow92JsehNdhO9eqXzgIWc4reu0WUS5_Q_bdz-Hl7eEaAAX7ekgz6ubjBxQFHPgrwyBJLyr6OUz0vmok4hGoDJXJeAzcWjclOX6tl6QBxAsQs2vUgD43ha7LCyBheZXGvs0U-7t7zh3L-VYbN5HD7szuX_m09563GjhitUe1VEVYf7EuuPSUxi2rIGu719HR62ClTH1aTqs1gYi1yR1RLTU3Uls-48-RqDHRwdy65j7_PbKE-_YKq-Jvcof5fWj0SwrNm9RRj3q5bgAd1CjNB8BCU08VDVeIJJeLgZyHsx_NDxfoN9rbqw7YTxLolNDMWpgWSmVWZK13cTe_V-pUYA4fcZNX07FjveBh62npW6sJnCgqo4HFdLsv3_oj2SoGyuofk6v_wBbRYBTk.nH7CTANvMm82O4ml1NCbtw\""
+        },
+        {
+          "name": "ps-auth",
+          "value": "true"
+        },
+        {
+          "name": "statements:batch-tracking:v1",
+          "value": "{\"version\":1,\"ttlMs\":21600000,\"batches\":{}}"
+        },
+        {
+          "name": "expires-at",
+          "value": "\"1771234345127\""
+        },
+        {
+          "name": "access-token",
+          "value": "\"eyJraWQiOiJiK0JOV1BVYzI1eFYxbVJvOWRiT1lPRUFwVHp5MjNjWXg2UDNYTCtzVEhVPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2MzU5M2U0MC1kMGM5LTRkYTAtODU3Yi04Y2U4YzZjOGJjMzciLCJjb2duaXRvOmdyb3VwcyI6WyJSZWNvcmRfQ2xlcmtzIiwiUGF5bWVudF9DbGVya3MiLCJTeXNfQWRtaW5zIiwiTWVkaWNhbFN0YWZmIiwiUHJvdmlkZXJzIl0sImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJjdXN0b206cHJhY3RpY2VVc2VySWQiOiJhYThlMjY5Ni1mNGFjLTRmM2YtOGJlMy0yYTRhZmZjODZlM2YiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0xLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMV9HT2RVU3RPdEgiLCJwaG9uZV9udW1iZXJfdmVyaWZpZWQiOnRydWUsImN1c3RvbTphdXRoIjoiZXlKbGJXRnBiQ0k2SW05bVptbGpaUzFoWkcxcGJrQndZWFJwWlc1MGMzUjFaR2x2TG1OdmJTSXNJbVY0Y0dseVlYUnBiMjRpT2lJeU1ESTFMVEF5TFRBelZESXdPalEzT2pFd0xqUTNOVm9pZlE9PSIsImNvZ25pdG86dXNlcm5hbWUiOiIyZGU1ZDBhNi1lZDJmLTQ1OWMtYWE1NS05MGRiZThiNGUyMjkiLCJnaXZlbl9uYW1lIjoiU2VlZCIsIm9yaWdpbl9qdGkiOiI3Y2ZkMmUzMC1iODM4LTQ2YjAtYjBkZS0zZmRjOTFjODQwZGYiLCJhdWQiOiIzY2c1bjY2cmdzbm1ncTRhbTdrbnV2NG5oZiIsImN1c3RvbTpwcmFjdGljZUlkIjoiMTVmY2JlMzYtMThhOS00MDcwLWI2OTctYTkzMDhlMDUwNjRlIiwiZXZlbnRfaWQiOiJiOGFhZTc0Yi0wMjYzLTQ2YmEtYjk1MC1hYmQyYzNiMmNhMjciLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTc3MTIxOTc2MywicGhvbmVfbnVtYmVyIjoiKzEyMTQ3MDcyOTM1IiwiZXhwIjoxNzcxMjM0MTYzLCJpYXQiOjE3NzEyMTk3NjQsImZhbWlseV9uYW1lIjoiT2ZmaWNlIEFkbWluIiwianRpIjoiZWVhYWZjZTAtYjE1Zi00NTdiLWI5OTUtYzI3NDVjNjg2NTdkIiwiZW1haWwiOiJvZmZpY2UtYWRtaW5AcGF0aWVudHN0dWRpby5jb20ifQ.WIBMKR_guLV2XnMoZX46WxZs7BbG9aFWrMBHroJTDKq9RY5BPSIC7MO1PWzRTlvbhxYXz_-TFyj4eJnOn43XnJ8zBl89wgHGh8o-wtkg9bT5D1qIe88N4f3e5-_FXh5gNpCy5vVdaaXKipjicpr63GoIZZDBzt7ceiXHKEF912HTaXYLp1dALfiMBzWntEEjaVGJGjPWelInJQuJrnYE0AcBCvvP4r9MTUER08xFfhBQ4QYPbMLo_JrjGolMnysAxGhnHabUeGaUvyHIX7evfBmcLTf2zrv7_KlitueNSsxvBGIdi8gBuMDXoyq2kGfKMFtdsbCSvgKC-bGq9taKzg\""
+        },
+        {
+          "name": "active-user",
+          "value": "{\"__typename\":\"PracticeUser\",\"id\":\"aa8e2696-f4ac-4f3f-8be3-2a4affc86e3f\",\"needsCoSign\":false,\"firstName\":\"Seed\",\"lastName\":\"Office Admin\",\"title\":\"Credentials\",\"accountId\":\"2de5d0a6-ed2f-459c-aa55-90dbe8b4e229\",\"aithozProviderNPI\":\"1457753212\",\"allowedLocations\":[],\"isActive\":true,\"userGroups\":[\"Payment_Clerks\",\"Record_Clerks\",\"Providers\",\"Sys_Admins\"],\"practice\":{\"__typename\":\"Practice\",\"id\":\"15fcbe36-18a9-4070-b697-a9308e05064e\",\"name\":\"Young Family PT Seed Office\",\"email\":\"support+qa@patientstudio.com\",\"nationalProviderIdentifier\":\"1518668045\",\"website\":\"adeoyehealings.com\",\"phone\":\"2539876543\",\"fax\":\"8008786715\",\"billingAddress\":{\"__typename\":\"Address\",\"street1\":\"71, Vila do Chavez\",\"street2\":null,\"state\":\"Washington\",\"city\":\"Seattle\",\"zip\":\"200012543\"},\"branding\":{\"__typename\":\"Branding\",\"id\":\"47d9bde6-2f23-4e38-a0a1-6a397bd2ab9b\",\"logo\":{\"__typename\":\"BrandingLogo\",\"downloadUrl\":\"https://patient-studio-qa-file-storag-bucketpracticelogos-14bf9iwhoxgmw.s3.amazonaws.com/15fcbe36-18a9-4070-b697-a9308e05064e\"}}}}"
+        }
+      ]
+    }
+  ]
+}

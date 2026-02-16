@@ -11,15 +11,9 @@ export default defineConfig({
   globalSetup: './global/globalSetup.ts',
 
   use: {
-    baseURL: 'https://platform.com',
-
+    baseURL: 'https://doctors.qa.patientstudio.com',
     storageState: '.auth/storageState.json',
-
-    headless: true,
-
-    screenshot: 'only-on-failure',
-
-    video: 'retain-on-failure'
+    headless: false
   }
 
 });
