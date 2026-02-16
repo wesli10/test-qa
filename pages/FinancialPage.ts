@@ -27,7 +27,6 @@ export class FinancialPage {
 
   async expectPaymentCreated() {
 
-    const { expect } = await import('@playwright/test');
     await expect(this.page.getByText('Payment successful')).toBeVisible();
 
   }

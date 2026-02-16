@@ -1,12 +1,12 @@
-# 🏥 PatientStudio - Testes Automatizados
+# 🏥 Testes Automatizados - E2E com Playwright
 
-Uma suíte de testes automatizados E2E desenvolvida em **Playwright** para validar funcionalidades críticas da plataforma **PatientStudio**, um sistema de gerenciamento de pacientes e pagamentos.
+Uma suíte de testes automatizados E2E desenvolvida em **Playwright** para validar funcionalidades críticas de uma aplicação web, com foco em gerenciamento de pacientes e processamento de pagamentos.
 
 ---
 
 ## 📋 Sobre o Projeto
 
-Este projeto implementa testes automatizados para a aplicação PatientStudio, focando em:
+Este projeto implementa testes automatizados para a aplicação, focando em:
 
 - ✅ Criação e gerenciamento de pacientes
 - ✅ Processamento de pagamentos
@@ -59,8 +59,9 @@ O projeto utiliza **variáveis de ambiente** para armazenar credenciais de forma
 
 | Variável | Descrição | Exemplo |
 |----------|-----------|---------|
-| `QA_URL` | Email de autenticação | `testemail@test.com` |
-| `QA_PASSWORD` | Senha de autenticação | `password` |
+| `QA_EMAIL` | Email de autenticação | `seu-email@dominio.com` |
+| `QA_PASSWORD` | Senha de autenticação | `sua-senha-segura` |
+| `BASE_URL` | URL base da aplicação | `https://seu-dominio.com` |
 
 ### Configurar o Arquivo `.env`
 
@@ -71,8 +72,9 @@ O projeto utiliza **variáveis de ambiente** para armazenar credenciais de forma
 
 2. **Editar com suas credenciais:**
    ```env
-   QA_URL = 'seu-email@patientstudio.com'
+   QA_EMAIL = 'seu-email@dominio.com'
    QA_PASSWORD = 'sua-senha-aqui'
+   BASE_URL = 'https://seu-dominio.com'
    ```
 
 3. **Verificar no `.gitignore`:**
@@ -90,7 +92,7 @@ O projeto utiliza **variáveis de ambiente** para armazenar credenciais de forma
 
 - **Node.js** 16+ instalado
 - **npm** ou **yarn** como gerenciador de pacotes
-- Acesso à URL: `https://doctors.qa.patientstudio.com`
+- Acesso à aplicação (configure a URL no `playwright.config.ts`)
 
 ### 1️⃣ Instalação
 
@@ -113,8 +115,9 @@ cp .env.example .env
 
 Edite o arquivo `.env`:
 ```env
-QA_URL = 'seu-email@patientstudio.com'
+QA_EMAIL = 'seu-email@dominio.com'
 QA_PASSWORD = 'sua-senha-aqui'
+BASE_URL = 'https://seu-dominio.com'
 ```
 
 ### 3️⃣ Executar os Testes
@@ -148,10 +151,10 @@ npm run test:debug
 **Dados Gerados Automaticamente:**
 ```typescript
 {
-  firstName: "João",           // Primeiro nome aleatório
-  lastName: "Silva",           // Último nome aleatório
-  email: "joao.silva@test.com", // Email baseado no nome
-  dateOfBirth: "01-16-2000"    // Data fixa de nascimento
+  firstName: "<nome-aleatorio>",        // Primeiro nome aleatório (gerado com Faker)
+  lastName: "<sobrenome-aleatorio>",    // Último nome aleatório (gerado com Faker)
+  email: "<email@random>",              // Email aleatório baseado no nome
+  dateOfBirth: "<data-de-nascimento>"   // Data de nascimento configurada
 }
 ```
 
@@ -236,10 +239,10 @@ test('create patient', async ({ page }) => {
 
 ```typescript
 {
-  baseURL: 'https://doctors.qa.patientstudio.com', // URL base
-  workers: 2,                                       // Execução paralela com 2 workers
-  fullyParallel: true,                              // Todos os testes em paralelo
-  headless: false                                   // Navegador visível por padrão
+  baseURL: 'https://seu-dominio.com',  // Configure com a URL base da sua aplicação
+  workers: 2,                          // Execução paralela com 2 workers
+  fullyParallel: true,                 // Todos os testes em paralelo
+  headless: false                      // Navegador visível por padrão
 }
 ```
 
@@ -427,7 +430,7 @@ npm test  # Vai gerar um novo setup
 | Erro de autenticação | Verificar credenciais em `.env` ou variáveis de ambiente |
 | Arquivo `.auth` corrompido | Deletar pasta `.auth` e executar novamente |
 | Timeout no setup | Aumentar timeout de login em `globalSetup.ts` |
-| "Process.env.QA_URL is undefined" | Verifique se o arquivo `.env` existe e foi configurado corretamente |
+| "Process.env.QA_EMAIL is undefined" | Verifique se o arquivo `.env` existe e foi configurado corretamente |
 
 ---
 

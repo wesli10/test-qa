@@ -20,7 +20,7 @@ export default async function globalSetup() {
   const browser = await chromium.launch();
 
   const context = await browser.newContext({
-    baseURL: 'https://doctors.qa.patientstudio.com'
+    baseURL: process.env.BASE_URL || 'https://seu-dominio.com'
   });
 
   const page = await context.newPage();
@@ -34,8 +34,12 @@ export default async function globalSetup() {
 
   await loginPage.goto();
 
-  const email = process.env.QA_URL || 'office-admin@patientstudio.com';
-  const password = process.env.QA_PASSWORD || '1 Super Safe Password!';
+  const email = process.env.QA_EMAIL || '';
+  const password = process.env.QA_PASSWORD || '';
+
+  if (!email || !password) {
+    throw new Error('QA_EMAIL e QA_PASSWORD devem ser configuradas no arquivo .env');
+  }
 
   await loginPage.login(email, password);
 

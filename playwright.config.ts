@@ -16,7 +16,7 @@ export default defineConfig({
   globalSetup: './global/globalSetup.ts',
 
   use: {
-    baseURL: 'https://doctors.qa.patientstudio.com',
+    baseURL: process.env.BASE_URL || 'https://seu-dominio.com',
     storageState,
     headless: false
   }
